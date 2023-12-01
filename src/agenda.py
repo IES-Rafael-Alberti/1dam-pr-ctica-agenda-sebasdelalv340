@@ -25,9 +25,8 @@ NOMBRE_FICHERO = 'contactos.csv'
 
 RUTA_FICHERO = path.join(RUTA, NOMBRE_FICHERO)
 
-#TODO: Crear un conjunto con las posibles opciones del menú de la agenda
 OPCIONES_MENU = {1, 2, 3, 4, 5, 6, 7, 8}
-#TODO: Utiliza este conjunto en las funciones agenda() y pedir_opcion()
+
 
 
 def borrar_consola():
@@ -47,14 +46,14 @@ def cargar_contactos(contactos: list) -> list:
         contactos (list): Lista de contactos vacía.
 
     Returns:
-        list: una lista con los contactos en diccionarios cargados desde un archivo.
+        list: una lista con los contactos.
     """
-    #TODO: Controlar los posibles problemas derivados del uso de ficheros...
 
+    # Recorre dos listas (nombres_clave y cada línea del fichero), guardando en diccionarios los datos de cada contacto para ir añadiendolo a una lista
+    
     nombres_clave = ["nombre", "apellido", "email", "telefonos"]
     with open(RUTA_FICHERO, 'r') as fichero:
         for linea in fichero:
-            print(linea)
             valores = linea.split(";")
             contacto_info = {}
             for i in range(len(nombres_clave)):
